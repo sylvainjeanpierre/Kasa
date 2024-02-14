@@ -1,0 +1,7 @@
+.rate-section {
+  display: flex;
+}
+
+.rate-section img {
+  margin-left: 10px;
+}
