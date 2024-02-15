@@ -4,6 +4,7 @@ import Header from "./Header";
 import Home from "./Home";
 import Footer from "./Footer";
 import Article from "./Article";
+import APropos from "./APropos";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
       },
       {
         path: "a-propos",
-        element: <p>A propos</p>,
+        element: <APropos />,
       },
     ],
   },

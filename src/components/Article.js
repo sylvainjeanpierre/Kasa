@@ -23,43 +23,40 @@ function Article() {
         />
       )}
 
-      <div className="details">
-        <div className="first-row">
-          <div className="title-and-location">
-            <h1 className="title">{apartment.title}</h1>
-            <p className="location">{apartment.location}</p>
-          </div>
-
-          <div className="host">
-            <p className="host-name">{apartment.host.name}</p>
-            <img
-              src={apartment.host.picture}
-              alt={apartment.host.name}
-              className="host-image"
-            />
-          </div>
+      <div className="apartement-infos">
+        <div className="title-and-location">
+          <h1 className="title">{apartment.title}</h1>
+          <p className="location">{apartment.location}</p>
         </div>
 
-        <div className="second-row">
-          <div className="tags-section">
-            {apartment.tags.map((tag) => (
-              <p className="tag">{tag}</p>
-            ))}
-          </div>
-          <div className="rating-section">
-            <div>
-              <Rating rate={apartment.rating} />
-            </div>
-          </div>
+        <div className="host">
+          <p className="host-name">{apartment.host.name}</p>
+          <img
+            src={apartment.host.picture}
+            alt={apartment.host.name}
+            className="host-image"
+          />
         </div>
 
-        <div className="third-row">
-          <details className="description-section">
+        <div className="tags-section">
+          {apartment.tags.map((tag) => (
+            <p className="tag">{tag}</p>
+          ))}
+        </div>
+
+        <div className="rating-section">
+          <Rating rate={apartment.rating} />
+        </div>
+
+        <div className="description-section">
+          <details className="details-article">
             <summary>Description</summary>
             <p className="description">{apartment.description}</p>
           </details>
+        </div>
 
-          <details className="equipements-section">
+        <div className="equipements-section">
+          <details className="details-article">
             <summary>Equipements</summary>
             {apartment.equipments.map((equipement) => (
               <p className="equipement">{equipement}</p>
