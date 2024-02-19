@@ -1,5 +1,5 @@
 import "../styles/Carousel.css";
-import { useState } from "react";
+import React, { useState } from "react";
 import prevArrow from "../assets/prev-arrow.png";
 import nextArrow from "../assets/next-arrow.png";
 
@@ -28,7 +28,7 @@ function Carousel(props) {
 
   return (
     <div className="carousel">
-      <img key={id} src={pictures[id]} alt={title} className="picture"></img>
+      <img key={id} src={pictures[id]} alt={title} className="picture" />
       <img
         src={prevArrow}
         alt="Bouton précédent"

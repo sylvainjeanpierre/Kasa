@@ -3,24 +3,27 @@ import "../styles/APropos.css";
 
 function APropos() {
   return (
-    <div>
+    <div className="a-propos">
       <img
         src={aProposBackground}
         alt="Arrière plan"
         className="a-propos-background"
       />
-      <details className="details-a-propos">
-        <summary>Fiabilité</summary>
-      </details>
-      <details className="details-a-propos">
-        <summary>Respect</summary>
-      </details>
-      <details className="details-a-propos">
-        <summary>Service</summary>
-      </details>
-      <details className="details-a-propos">
-        <summary>Sécurité</summary>
-      </details>
+
+      <div className="details-a-propos">
+        <details>
+          <summary>Fiabilité</summary>
+        </details>
+        <details>
+          <summary>Respect</summary>
+        </details>
+        <details>
+          <summary>Service</summary>
+        </details>
+        <details>
+          <summary>Sécurité</summary>
+        </details>
+      </div>
     </div>
   );
 }
