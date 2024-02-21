@@ -1,7 +1,58 @@
-import "../styles/Carousel.css";
-import React, { useState } from "react";
+import "../styles/Carousel.scss";
+import React, { useState, useEffect } from "react";
 import prevArrow from "../assets/prev-arrow.png";
 import nextArrow from "../assets/next-arrow.png";
+
+// image preload for lazy loading
+function preloadImage(src) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = function () {
+      resolve(img);
+    };
+    img.onerror = img.onabort = function () {
+      reject(src);
+    };
+    img.src = src;
+  });
+}
+
+function useImagePreloader(imageList) {
+  const [imagesPreloaded, setImagesPreloaded] = useState(false);
+
+  useEffect(() => {
+    let isCancelled = false;
+
+    async function effect() {
+      console.log("PRELOAD");
+
+      if (isCancelled) {
+        return;
+      }
+
+      const imagesPromiseList = [];
+      for (const i of imageList) {
+        imagesPromiseList.push(preloadImage(i));
+      }
+
+      await Promise.all(imagesPromiseList);
+
+      if (isCancelled) {
+        return;
+      }
+
+      setImagesPreloaded(true);
+    }
+
+    effect();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [imageList]);
+
+  return { imagesPreloaded };
+}
 
 function Carousel(props) {
   const pictures = props.pictures;
@@ -24,6 +75,14 @@ function Carousel(props) {
     } else {
       setId(id - 1);
     }
+  }
+
+  const { imagesPreloaded } = useImagePreloader(pictures);
+
+  if (!imagesPreloaded) {
+    console.log("Not finish to load images");
+  } else {
+    console.log("All images are loaded");
   }
 
   return (

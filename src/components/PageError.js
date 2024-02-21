@@ -1,4 +1,4 @@
-import "../styles/PageError.css";
+import "../styles/PageError.scss";
 import { NavLink } from "react-router-dom";
 
 function PageError() {

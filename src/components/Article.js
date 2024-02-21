@@ -1,4 +1,4 @@
-import "../styles/Article.css";
+import "../styles/Article.scss";
 import apartments from "../datas/logements.json";
 import { useParams } from "react-router-dom";
 import Carousel from "./Carousel";
@@ -52,22 +52,18 @@ function Article() {
             <Rating rate={apartment.rating} />
           </div>
 
-          <div className="description-section">
-            <details className="details-article">
-              <summary>Description</summary>
-              <p className="description">{apartment.description}</p>
-            </details>
-          </div>
+          <input id="description__input" type="checkbox" />
+          <label htmlFor="description__input"> Description</label>
+          <p className="description__details">{apartment.description}</p>
 
-          <div className="equipements-section">
-            <details className="details-article">
-              <summary>Equipements</summary>
-              {apartment.equipments.map((equipement) => (
-                <p key={equipement} className="equipement">
-                  {equipement}
-                </p>
-              ))}
-            </details>
+          <input id="equipements__input" type="checkbox" />
+          <label htmlFor="equipements__input"> Equipement</label>
+          <div className="equipements__details">
+            {apartment.equipments.map((equipement) => (
+              <p className="equipements__detail" key={equipement}>
+                {equipement}
+              </p>
+            ))}
           </div>
         </div>
       </article>

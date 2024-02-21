@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "../styles/Home.css";
+import "../styles/Home.scss";
 import sloganBackground from "../assets/slogan-background.png";
 import apartment from "../datas/logements.json";
 

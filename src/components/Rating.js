@@ -1,6 +1,6 @@
 import redStar from "../assets/red-star.png";
 import whiteStar from "../assets/white-star.png";
-import "../styles/Rating.css";
+import "../styles/Rating.scss";
 
 function Rating(props) {
   const rate = props.rate;
