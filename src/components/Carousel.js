@@ -24,8 +24,7 @@ function useImagePreloader(imageList) {
     let isCancelled = false;
 
     async function effect() {
-      console.log("PRELOAD");
-
+ 
       if (isCancelled) {
         return;
       }
@@ -77,13 +76,7 @@ function Carousel(props) {
     }
   }
 
-  const { imagesPreloaded } = useImagePreloader(pictures);
-
-  if (!imagesPreloaded) {
-    console.log("Not finish to load images");
-  } else {
-    console.log("All images are loaded");
-  }
+useImagePreloader(pictures);
 
   return (
     <div className="carousel">
