@@ -24,7 +24,7 @@ function useImagePreloader(imageList) {
     let isCancelled = false;
 
     async function effect() {
- 
+
       if (isCancelled) {
         return;
       }
@@ -76,26 +76,37 @@ function Carousel(props) {
     }
   }
 
-useImagePreloader(pictures);
+  useImagePreloader(pictures);
 
-  return (
-    <div className="carousel">
-      <img key={id} src={pictures[id]} alt={title} className="picture" />
+  if (pictures.length > 1) {
+    return (
+      <div className="carousel">
+        <img key={id} src={pictures[id]} alt={title} className="picture" />
+        <img
+          src={prevArrow}
+          alt="Bouton précédent"
+          className="btn-prev"
+          onClick={pictureSelectorReverse}
+        />
+        <p className="img-indicator">{`${id + 1}/${nbPictures}`}</p>
+        <img
+          src={nextArrow}
+          alt="Bouton suivant"
+          className="btn-next"
+          onClick={pictureSelector}
+        />
+      </div>
+    )
+  } else {
+    return (
       <img
-        src={prevArrow}
-        alt="Bouton précédent"
-        className="btn-prev"
-        onClick={pictureSelectorReverse}
+        src={pictures}
+        alt={title}
+        className="picture"
       />
-      <p className="img-indicator">{`${id + 1}/${nbPictures}`}</p>
-      <img
-        src={nextArrow}
-        alt="Bouton suivant"
-        className="btn-next"
-        onClick={pictureSelector}
-      />
-    </div>
-  );
+    )
+  }
+
 }
 
 export default Carousel;

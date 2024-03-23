@@ -3,11 +3,11 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./styles/index.scss";
 import Header from "./components/Header";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import Footer from "./components/Footer";
-import Article from "./components/Article";
-import APropos from "./components/APropos";
-import PageError from "./components/PageError";
+import Article from "./pages/Article";
+import APropos from "./pages/APropos";
+import PageError from "./pages/PageError";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/:id" element={<Article />} />
+        <Route path="/logements/:id" element={<Article />} />
         <Route path="/a-propos" element={<APropos />} />
         <Route path="*" element={<PageError />} />
       </Routes>

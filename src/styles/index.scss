@@ -1,18 +1,11 @@
-$orange-light : #f26b61;
+* {
+	font-family: "Raleway", sans-serif;
+	font-weight: 400;
+}
 
 body {
 	padding: 10px 10px 0 10px;
 	max-width: 1250px;
 	min-width: 300px;
 	margin: auto;
-	font-family: "Raleway", sans-serif;
-	font-weight: 400;
-}
-label {
-	background-color: $orange-light;
-	color: white;
-	padding: 10px;
-	border-radius: 10px;
-	font-weight: 600;
-	cursor: pointer;
 }

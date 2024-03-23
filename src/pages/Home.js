@@ -1,32 +1,27 @@
-import "../styles/Main.css";
+import { Link } from "react-router-dom";
+import "../styles/Home.scss";
 import sloganBackground from "../assets/slogan-background.png";
 import apartment from "../datas/logements.json";
+import Banner from "../components/Banner";
 
-function Main() {
+function Home() {
   return (
     <main>
-      <div className="slogan-container">
-        <img
-          src={sloganBackground}
-          alt="Arrière plan du slogan"
-          className="slogan-background"
-        />
-        <p className="slogan">Chez vous, partout et ailleurs</p>
-      </div>
+      <Banner image={sloganBackground} slogan="Chez vous, partout et ailleurs" />
       <section className="gallery">
         {apartment.map((apartment) => (
-          <div key={apartment.id} onClick className="apartment-card">
+          <Link to={`logements/${apartment.id}`} key={apartment.id} className="apartment-card">
             <img
               src={apartment.cover}
               alt={apartment.title}
               className="apartment-card-image"
             />
             <p className="apartment-card-title">{apartment.title}</p>
-          </div>
+          </Link>
         ))}
       </section>
     </main>
   );
 }
 
-export default Main;
+export default Home;

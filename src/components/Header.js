@@ -9,10 +9,10 @@ function Header() {
         <img src={logoKasa} alt="Logo de Kasa" className="logo-kasa" />
       </NavLink>
       <nav className="navBar">
-        <NavLink className="nav-button" to="/">
+        <NavLink className={({ isActive }) => (isActive ? 'nav-button active' : 'nav-button')} to="/" >
           Accueil
         </NavLink>
-        <NavLink className="nav-button" to="/a-propos">
+        <NavLink className={({ isActive }) => (isActive ? 'nav-button active' : 'nav-button')} to="/a-propos">
           A propos
         </NavLink>
       </nav>
