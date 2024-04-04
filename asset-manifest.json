@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Kasa/static/css/main.82b3fa78.css",
+    "main.js": "/Kasa/static/js/main.f616c05c.js",
+    "static/media/a-propos-background.png": "/Kasa/static/media/a-propos-background.7c1a4e99d63697304ff1.png",
+    "static/media/slogan-background.png": "/Kasa/static/media/slogan-background.06cf8d24c4a2282b10b9.png",
+    "static/media/logo-kasa.png": "/Kasa/static/media/logo-kasa.b588ce6cb66df771c60d.png",
+    "index.html": "/Kasa/index.html",
+    "main.82b3fa78.css.map": "/Kasa/static/css/main.82b3fa78.css.map",
+    "main.f616c05c.js.map": "/Kasa/static/js/main.f616c05c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.82b3fa78.css",
+    "static/js/main.f616c05c.js"
+  ]
+}
