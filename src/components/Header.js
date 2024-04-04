@@ -5,14 +5,14 @@ import { NavLink } from "react-router-dom";
 function Header() {
   return (
     <div className="header">
-      <NavLink to="/">
+      <NavLink to="/Kasa/">
         <img src={logoKasa} alt="Logo de Kasa" className="logo-kasa" />
       </NavLink>
       <nav className="navBar">
-        <NavLink className={({ isActive }) => (isActive ? 'nav-button active' : 'nav-button')} to="/" >
+        <NavLink className={({ isActive }) => (isActive ? 'nav-button active' : 'nav-button')} to="/Kasa/" >
           Accueil
         </NavLink>
-        <NavLink className={({ isActive }) => (isActive ? 'nav-button active' : 'nav-button')} to="/a-propos">
+        <NavLink className={({ isActive }) => (isActive ? 'nav-button active' : 'nav-button')} to="/Kasa/a-propos">
           A propos
         </NavLink>
       </nav>

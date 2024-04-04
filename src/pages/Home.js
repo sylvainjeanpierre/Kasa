@@ -10,7 +10,7 @@ function Home() {
       <Banner image={sloganBackground} slogan="Chez vous, partout et ailleurs" />
       <section className="gallery">
         {apartment.map((apartment) => (
-          <Link to={`logements/${apartment.id}`} key={apartment.id} className="apartment-card">
+          <Link to={`/Kasa/logements/${apartment.id}`} key={apartment.id} className="apartment-card">
             <img
               src={apartment.cover}
               alt={apartment.title}
